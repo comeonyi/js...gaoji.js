@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	/*非整百年的年份中，能被4整除的为闰年，不能被4整除的为平年。
+ * 如2004年就是闰年，2001年平年。
+
+整百年的年份中，能被400整除的是闰年，不能被400整除的是平年。
+如2000年是闰年，1900年是平年。*/
+	<script type="text/javascript">
+		var year =prompt('请输入你要查询的年份')
+		if( (year%4 == 0  && year%100 !=0) || year%400 == 0 ){
+			alert(year+'年是闰年')
+		}else{
+			alert(year+'年是平年')
+		}
+		var money=prompt("请输入","100");
+		document.write(typeof(money));
+	</script>
+</html>

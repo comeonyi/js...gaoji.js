@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//for-in   if
+		//下标
+		var arr = ['b','a','c','a','d','e','c','j','a'];
+		//数组的下标从0开始
+		console.log(arr.length);
+		var num=0;
+		for(var index in arr){
+			if (arr[index] == 'a') {
+				num++;
+			}
+		}
+		document.write(num);
+	</script>
+</html>

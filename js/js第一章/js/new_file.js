@@ -1,0 +1,1 @@
+document.write('<br>欢迎大家学习JavaScript这本书1');

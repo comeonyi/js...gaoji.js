@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>节点操作</title>
+    </head>
+    <style type="text/css">
+    	.daohang{
+    		width: 800px;
+    		height: 60px;
+    	}
+    	.daohang>button{
+    		background: red;
+    		color: white;
+    		border-radius: 25px;
+    		float: right;
+    		width: 75px;
+            height: 39px;
+    	}
+        .tu{
+            width: 810px;
+            height: 415px;
+            position: relative;
+        }
+        .box1{
+            position: absolute;
+            z-index: 99;
+            top: 220px;
+            left: 410px;
+        }
+        .box1>p{
+            display: inline-block;
+        }
+        .box2{
+            position: absolute;
+            z-index: 90;
+            top: 320px;
+            left: 410px;
+        }
+        .box2>p{
+            display: inline-block;
+        }
+        .box3{
+            width: 800px;
+            border:3px solid red;
+            position: relative;
+            
+        }
+        button{
+        	margin-left: 10px;
+        	margin-right: 10px;
+        }
+        .tu>button{
+            width: 75px;
+            height: 39px;
+            position: absolute;
+            left: 700px;
+            top: 350px;
+            background: red;
+    		color: white;
+        }
+    </style>
+    <body>
+    	<div class="daohang">
+    		<img src="img/dd_logo.jpg"/>
+    		<button onclick="clo_win() ">关闭</button>
+    	</div>
+        <div class="box1">
+        	  单价：￥<p id="dan">12.5</p>
+            <button onclick="jian()">-</button><span id="span">1</span><button onclick="jia()">+</button>
+            总价：￥<p id="zong">12.5</p>
+        </div>
+        <div class="box2">
+        	 单价：￥<p id="dd">24</p>
+            <button onclick="jj()">-</button><span id="spa">1</span><button onclick="ja()">+</button>
+            总价：￥<p id="zz">24</p>
+        </div>
+	        <p class="tu"><img src="img/shoppingBg.jpg"/>
+	        <button onclick="jie()">结算</button></p>
+        <div class="box3">
+        <p id="suan"></p>
+            
+        </div>
+         
+    </body>
+    <script type="text/javascript">
+    	function clo_win() {
+			window.close("加减结算页面.html");
+		}
+        var dan=document.getElementById('dan').innerHTML;
+        var zong=document.getElementById('zong').innerHTML;
+        var dd=document.getElementById('dd').innerHTML;
+        var zz=document.getElementById('zz').innerHTML;
+         
+        function jian(){
+            var num=document.getElementById('span').innerHTML;
+            var span=parseInt(num);
+            if (document.getElementById('span').innerHTML == 1) {
+                alert('不能再减了，再减就没了！');
+                return;
+            } else{
+                document.getElementById('span').innerHTML=span-1;
+                document.getElementById('zong').innerHTML=document.getElementById('dan').innerHTML*document.getElementById('span').innerHTML;
+            }
+        }
+        function jia(){
+            var num1=document.getElementById('span').innerHTML;
+            var span=parseInt(num1);
+            document.getElementById('span').innerHTML=span+1;
+            document.getElementById('zong').innerHTML=document.getElementById('dan').innerHTML*document.getElementById('span').innerHTML;
+        }
+         
+        var dd=document.getElementById('dd').innerHTML;
+        var zz=document.getElementById('zz').innerHTML;
+        function jj(){
+            var num2=document.getElementById('spa').innerHTML;
+            var spa=parseInt(num2);
+            if (document.getElementById('spa').innerHTML == 1) {
+                alert('不能再减了，再减就没了！');
+                return;
+            } else{
+                document.getElementById('spa').innerHTML=spa-1;
+                document.getElementById('zz').innerHTML=document.getElementById('dd').innerHTML*document.getElementById('spa').innerHTML;
+            }
+        }
+        function ja(){
+            var num3=document.getElementById('spa').innerHTML;
+            var spa=parseInt(num3);
+            document.getElementById('spa').innerHTML=spa+1;
+            document.getElementById('zz').innerHTML=document.getElementById('dd').innerHTML*document.getElementById('spa').innerHTML;
+        }
+        var suan=document.getElementById('suan');
+        function jie(){
+            suan.innerHTML='白岩松：白说 单价：￥'+dan+'数量：'+document.getElementById('span').innerHTML+'总价：'+document.getElementById('zong').innerHTML+'<br/>'+
+            '岛上书店'+'单价：￥'+dd+'数量：'+document.getElementById('spa').innerHTML+'总价：'+document.getElementById('zz').innerHTML+
+            '<br/>合计金额：'+(parseFloat(document.getElementById('zong').innerHTML)+parseFloat(document.getElementById('zz').innerHTML));
+        }
+    </script>
+</html>

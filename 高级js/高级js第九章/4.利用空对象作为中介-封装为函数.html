@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4.利用空对象作为中介-封装为函数</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Person(){	
+		}
+		Person.prototype.foot=2;
+		Person.prototype.head=1;
+		function Student(name,no){
+			this.name=name;
+			this.no=no;
+		}
+		
+		//空对象作为中介完成继承
+		function extend(Child,Parent){
+			var F=function(){};
+			F.prototype=Parent.prototype;
+			Child.prototype = new F();
+			Child.prototype.constructor = Child;
+		}
+		
+		extend(Student,Person);
+		var arr=new Student('张三','123');
+		console.log(arr.constructor);
+		console.log(arr.name);
+		console.log(arr.no);
+		
+		console.log(arr.foot);
+		console.log(arr.head);
+		
+		//F空对象作为中介解决了如下缺点
+		//缺点：把父类Person的constructor也同步改掉了
+		console.log(Person.prototype.constructor);
+	</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post" id="myForm">
+			<p>姓名:<input type="text" name="mingzi" id="mingzi" value="" placeholder="请输入姓名" onfocus="mingfo()" onblur="mingbl()"/>
+			<span></span>
+			</p>
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		var myForm=document.getElementById('myForm');
+		
+		var mingzi=document.getElementById('mingzi');
+		var spans=document.getElementsByTagName('span');
+		function mingfo(){
+			spans[0].innerHTML='请输入6-12位字符';
+		}
+		function mingbl(){
+			var reg=/^[a-zA-Z0-9]{6,12}/;
+			var mingValue=mingzi.value;
+			if(mingValue==''){
+				spans[0].innerHTML='不能为空';
+			}
+			if(reg.test(mingValue)==false){
+				spans[0].innerHTML='长度不满足需求';
+				return false;
+			}
+			spans[0].innerHTML='合格';
+			return true;
+		}
+		myForm.onsubmit=function(){
+			if(mingbl()==false){
+				return false;
+			}
+			return true;
+		}
+	</script>
+</html>

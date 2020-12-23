@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			h2{
+				cursor: pointer;
+			}
+			ul{
+				list-style: none;
+				display: none;
+			}
+			li{
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				background: orange;
+				margin-top: 1px;
+			}
+			ul>#li:hover{
+				background: red;
+				list-style: none;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h2 onclick="myFunction()">前端课程</h2>
+		<ul id="ul" onclick='youFunction()'>
+			<li>HTML5</li>
+			<li>CSS3</li>
+			<li id='li'>javascript</li>
+			<li>jquert</li>
+			<li>canvas</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		function  myFunction(){
+			var ul = document.getElementById('ul');
+			if(ul.style.display == 'block'){
+				ul.style.display='none';
+			}else{
+				ul.style.display = 'block';
+			}
+		}
+		function youFunction(){
+			var li = document.getElementById('li');
+			if(li.style.display == 'block'){
+				li.style.display = 'none';
+			}else{
+				li.style.display = 'block';
+			}
+		}
+	</script>
+</html>

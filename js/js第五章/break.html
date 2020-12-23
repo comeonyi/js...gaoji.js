@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//break;只要满足break所在的条件      就跳出循环
+		//break在for循环中的使用
+		for(var a=1;a<6;a++){
+			var num=parseFloat(prompt('请输入第'+a+'名学员的成绩'));
+			if (num>0) {
+				document.write('第'+a+'名学员的成绩为：'+num+'<br/>');
+			} else{
+				document.write('第'+a+'名学员的成绩错误，强制退出<br/>');
+				break;
+			}
+		}
+		//break 的使用 是否满足条件     如果满足    直接退出对应的程序       后续循环不执行
+		//continue   的使用   满足条件   结束当前循环      不影响  后续循环的执行
+		
+	</script>
+</html>

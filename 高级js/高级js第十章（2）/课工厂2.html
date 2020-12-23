@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+            *{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				height: 300px;
+				border: 1px solid black;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			ul{
+				/*float: left;*/
+				list-style: none;
+			}
+			#left{
+				width: 200px;
+				height: 300px;
+				background: pink;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#left>li{
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+			}
+			#left>li:hover{
+				background: yellow;
+				cursor: pointer;
+			}
+			#right{
+				width: 300px;
+				height: 300px;
+				background: cyan;
+				position: absolute;
+				right: 0;
+			}
+			#right>li{
+				width: 300px;
+				height: 300px;
+				background: burlywood;
+				/*display: none;*/
+			}
+        </style>
+    </head>
+    <body>
+       <div id="box">
+			<ul id="left">
+				<li>第一个页面</li>
+				<li>第二个页面</li>
+				<li>第三个页面</li>
+			</ul>
+			<ul id="right">
+				<li>家电</li>
+				<li>水果</li>
+				<li>服装</li>
+			</ul>
+		</div>
+    </body>
+    <script type="text/javascript">
+        //分别获取 左右两个盒子里面的li
+        var left=document.getElementById('left');
+        var right=document.getElementById('right');
+        var lis1=document.getElementById('left').children;
+        var lis2=document.getElementById('right').offsetHeight;
+        console.log(lis2);
+        for (var i=0;i<lis1.length;i++) {
+            lis1[i].num=i;
+            lis1[i].onmouseover=function(){
+                console.log(this);
+                console.log(this.num);
+                right.style.top=-this.num*lis2+'px';
+            }
+        }
+         
+    </script>
+</html>

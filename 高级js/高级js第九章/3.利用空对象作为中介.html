@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3.利用空对象作为中介</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Person(){	
+		}
+		Person.prototype.foot=2;
+		Person.prototype.head=1;
+		function Student(name,no){
+			this.name=name;
+			this.no=no;
+		}
+		//F空对象，几乎不占内存
+		var F=function(){}
+		F.prototype=Person.prototype;
+		Student.prototype=new F();
+		var arr=new Student('张三','123');
+		Student.prototype.constructor=Student;
+		console.log(arr.constructor);
+		console.log(arr.name);
+		console.log(arr.no);
+		
+		console.log(arr.foot);
+		console.log(arr.head);
+		
+		//F空对象作为中介解决了如下缺点
+		//缺点：把父类Person的constructor也同步改掉了
+		console.log(Person.prototype.constructor);
+	</script>
+</html>

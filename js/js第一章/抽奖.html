@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				position:relative;
+			}
+			img{
+				width: 300px;
+				height: 300px;
+			}
+			button{
+				width: 100px;
+				height: 50px;
+				position: absolute;
+				left: 100px;
+				bottom: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/lALPDgQ9rx9OyhbNAu7NA-g_1000_750.png"/>
+			<button onclick="xuan()">按钮</button>
+			<!--<button onclick="du()">按</button>-->
+		</div>
+		<script type="text/javascript">
+			function xuan(){
+				var num =parseInt(Math.random()*10);
+				if(num == 8){
+					alert('一等奖');
+				}else if(num ==2 || num == 6){
+					alert('二等奖');
+				}else{
+					alert('未中奖');
+				}
+			}
+		</script>
+		<!--<script type="text/javascript">
+			function du(){
+				var num =parseInt(Math.random()*100);
+				if(num==5){
+					alert('中奖');
+				}else if(num==3||num==4){
+					alert('赢了');
+				}else{
+					alert('亏损');
+				}
+			}
+		</script>-->
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="one()">按钮1</button>
+		<button onclick="two(5)">按钮2</button>
+	</body>
+	<script type="text/javascript">
+		//无参函数   ：函数名()：的小括号里面   没有任何信息(参数)
+		function  one(){
+			alert('这是无参函数');
+		}
+//		有参函数   函数名(有参数)
+//		页面中的5  是实际参数           实参和形参
+		function  two(num){  //num  形式参数
+//			document.write("我们家的电器全是"+num+"品牌的")
+			for(var b=0;b<num;b++){
+				document.write('学习js'+(b+1)+"<br/>")
+			}
+		}
+	</script>
+</html>

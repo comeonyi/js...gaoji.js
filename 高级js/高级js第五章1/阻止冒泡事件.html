@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 200px;
+				height: 150px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div onclick="add()">
+			<button onclick="btn()">按钮</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function add(e){
+			var oEvent=e || event;
+			console.log(oEvent);
+			event.stopPropagation();
+			event.cancelBubble=true;
+			console.log('你点击了大盒子');
+		}
+		function btn(e){
+			var oEvent=e || event;
+			console.log('oEvent');
+			//阻止冒泡事件
+			event.stopPropagation();
+			event.cancelBubble=true;
+			
+			console.log('你点击了按钮');
+		}
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+//		属性和方法:  属性就是一个单词        方法/函数是带()
+        var arr=['10','20','55','30','66','208','88','75'];
+        console.log(arr);
+        document.write("数组是："+arr+'<br/>');
+        //属性   length   得到的是     数组的长度
+        document.write('数组的长度是：'+arr.length+'<br/>');
+        //join(): 把数据的所有元素放入一个字符串，并与符号分隔
+        var str=arr.join();
+        document.write(str+'<br/>');
+        console.log(str);
+        document.write('-------------<br/>');
+        var arr=[66,33,88,44,58,10];
+        //sort()  会把数组里面的数据进行排序  数字从小到大进行排序
+        document.write(arr+'<br/>');
+        document.write(arr.sort()+'<br/>');
+        document.write('-------------<br/>');
+        //排序函数
+        function num(a,b){
+        	return a - b;//将小的放在前面
+        }
+        //sort() 只针对    位数一样的可以
+        var arr1=[55,22,66,33,10,220,9,202];
+        var arr2=[6,4,9,214,88];
+        document.write(arr1+'<br/>');
+        document.write(arr1.sort(num)+'<br/>');//以及不按我们从小到大的顺序
+        document.write(arr2.sort(num)+'<br/>');//以及不按我们从小到大的顺序
+	</script>
+</html>

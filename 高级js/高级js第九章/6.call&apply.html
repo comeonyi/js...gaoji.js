@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>6.call&apply</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Person(address,sex){
+			this.foot=2;
+			this.head=1;
+			this.address = address;
+			this.sex = sex;
+		}
+		
+		function Student(name,no){
+			//使用call或apply实现继承
+//			Person.call(this,'北京','女');
+			Person.apply(this,['北京','女']);
+			this.name=name;
+			this.no=no;
+		}
+		var arr=new Student('张三','123');//实例化对比
+		console.log(arr.no);
+		console.log(arr.foot);
+		console.log(arr.address);
+		console.log(arr.sex);
+	</script>
+</html>

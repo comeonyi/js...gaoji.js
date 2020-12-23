@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var arr=[6,9,54,84,45,46,82,14,56,13];
+		Array.prototype.min2max=function(){
+			for(var i=0;i<this.length;i++){
+				for(var j=0;j<i;j++){
+					if(this[i]>this[j]){
+						temp=this[i];
+						this[i]=this[j];
+						this[j]=temp;
+					}
+				}
+			}
+			return  this;
+		}
+		console.log(arr.min2max());
+	</script>
+</html>

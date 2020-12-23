@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//求五门课程的平均分
+		var zong=0;
+		for (var a=0;a<5;a++) {
+			var num=parseFloat(prompt('请输入五门课程中，第'+(a+1)+'门的成绩'));
+			zong+=num;
+		}
+		var b=zong/5;
+		document.write('五门课程的平均分是：'+b);
+	</script>
+</html>

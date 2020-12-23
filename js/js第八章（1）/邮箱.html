@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="texe" id="text" value="" />
+		<button onclick="arr()">按钮</button>
+	</body>
+	<script type="text/javascript">
+		function arr(){
+			var text=document.getElementById('text').value;
+			if (text.indexOf('@')  == -1 || text.indexOf('.')  == -1 ) {
+				alert('你输入的邮箱地址不正确');
+			} else{
+				alert('你输入的邮箱地址正确');
+			}
+		}
+	</script>
+</html>

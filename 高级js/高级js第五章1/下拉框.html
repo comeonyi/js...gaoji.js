@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				display: none;
+				width: 400px;
+				height: 100px;
+				background: blueviolet;
+			}
+			li{
+				width: 100px;
+				height: 20px;
+				line-height: 20px;
+				float: left;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<button onclick="btn()">源语言：自动检测</button><br />
+			<ul id="ul">
+				<li>中文</li>
+				<li>英文</li>
+				<li>日文</li>
+				<li>葡萄牙文</li>
+				<li>法文</li>
+				<li>俄文</li>
+				<li>英文</li>
+				<li>日文</li>
+				<li>葡萄牙文</li>
+				<li>法文</li>
+				<li>俄文</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var ul=document.getElementById('ul');
+		var div=document.getElementById('div');
+		function btn(){
+			ul.style.display='inline-block';
+		}
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 
+		var num1=parseFloat(prompt('请输入第一个数'))
+		var fuhao=prompt('请输入运算符')
+		var num2=parseFloat(prompt('请输入第一个数'))
+		
+		switch(fuhao){
+			case '+':
+				alert(num1+"+"+num2+"="+(num1+num2));
+				break;
+			case '-':
+				alert(num1+"-"+num2+"="+(num1-num2));
+				break;
+			case '*':
+				alert(num1+"*"+num2+"="+num1*num2);
+				break;	
+			case '/':
+				alert(num1+"/"+num2+"="+num1/num2);
+				break;
+			case '%':
+				alert(num1+"%"+num2+"="+num1%num2);
+				break;
+			default:
+				alert('输入的信息不对');
+				break;
+		}
+	</script>
+</html>

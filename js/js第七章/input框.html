@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<p>用户名：<input type="text" id="text" value="" /></p>
+			<p>密码：<input type="password" name="password" id="password" value="" /></p>
+			<p>邮箱：<input type="text"  id="emile" value="" /></p>
+			<input type="submit" value="提交" onclick="subm()"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		console.log(password);
+		function subm(){
+			//先得到用户名和密码里面的信息
+			var text=document.getElementById('text').value;
+			var password=document.getElementById('password').value;
+			var emile=document.getElementById('emile').value;
+			//通过判断信息的长度是否合格进行操作
+			if(text.length<6){
+				alert('用户名太短，请重新输入');
+				return;
+			}
+			if(password.length<6){
+				alert('密码太短，请重新输入');
+				return;
+			}
+			if(emile.indexOf('@') == -1 || emile.indexOf('.') == -1){
+				alert('不合格');
+			}else{
+				alert('合格');
+			}
+		}
+	</script>
+</html>

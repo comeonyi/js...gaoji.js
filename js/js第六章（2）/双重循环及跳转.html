@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var num= prompt('几点');
+		if (num>=1 && num<=24) {
+			if (num>=6 && num<=12) {
+				document.write('<h1>上午好！欢迎来到贵美</h1>');
+				for(var a=0;a<num;a++){
+					document.write('<img src="img/smile.gif"/>');
+				}
+			}else if(num>=13 && num<=20){
+			    document.write('<h1>下午好！欢迎来到贵美</h1>');
+				for(var a=0;a<num;a++){
+					document.write('<img src="img/aftermoon.gif"/>');
+			    }
+			}else{
+				document.write('<h1>深夜了，改休息了</h1>');
+				for(var a=0;a<num;a++){
+					document.write('<img src="img/moon.gif"/>');
+			    }
+			}		
+		}else{
+			document.write('<h1>输入的时间不正确</h1>');
+		}
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>7.组合继承</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Person(){
+			this.foot=2;
+			this.head=1;
+			this.favorColor=['red','yellow'];
+		}
+		Person.prototype.sayColor=function(){
+			console.log('Hello,我最喜欢的颜色是：'+this.favorColor);
+		}
+		function Student(name,no){
+			//使用构造函数绷定实现了对父类属性的继承
+			Person.call(this);
+			this.name=name;
+			this.no=no;
+		}
+		//原型链继承-继承property对象的属性和方法
+		Student.prototype = new Person();
+		Student.prototype.constructor=Student;
+		
+		var arr=new Student('张三','123');
+		console.log(arr.foot);
+		console.log(arr.head);
+		console.log(arr.favorColor);
+		arr.sayColor();
+		
+		var arr2 = new Student('李四','456');
+		console.log(arr2.foot);
+		console.log(arr2.head);
+		console.log(arr2.favorColor);
+		arr2.sayColor();
+		
+	</script>
+</html>

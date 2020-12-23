@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//获取本地时间
+		var date = new Date();
+		document.write(date);
+		
+		var year = date.getFullYear();//获取的是   年
+		document.write("<br>"+year+"年");
+		var month = date.getMonth()+1;//获取的是   月份  但是0~11  必须+1
+		//0~11
+		var month1;
+		document.write("<br>"+month+"月");
+		
+		var day = date.getDate();
+		document.write("<br>"+day+"号");
+		var week = date.getDay();
+		document.write("<br>"+"星期"+week);
+		var week1;
+		
+		switch(month){
+			case 1:
+				month1='一月'
+				break;
+			case 2:
+				month1='二月'
+				break;
+			case 3:
+				month1='三月'
+				break;
+			default:
+				break;	
+		}
+		switch (week){
+			case 1:
+				week1='星期一'
+				break;
+			case 2:
+				week1='星期二'
+				break;
+			case 3:
+				week1='星期三'
+				break;
+			case 4:
+				week1='星期四'
+				break;
+			case 5:
+				week1='星期五'
+				break;	
+			default:
+				break;
+		}
+		document.write("<br>"+year+"年"+month1+day+"日"+week1)
+	</script>
+</html>

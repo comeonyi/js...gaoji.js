@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<button onclick='jian()'>-</button>
+		<button onclick='jia()'>+</button>
+		<p id='p'>
+			习近平将出席二十国集团领导人应对新冠肺炎特别峰会
+			李克强：一视同仁支持各种所有制航空货运市场主体发展
+			不同行业复工复产难症结在哪？ 李克强开会逐一解“结”
+			栗战书出席强化公共卫生法治保障立法修法座谈会
+			汪洋在国务院扶贫办调研：必须克服形式主义和官僚主义
+			胡春华：充分利用网络招聘形式 全力促进就业大局稳定
+			韩正强调：积极有序推动重大投资项目开工复工
+			孙春兰：毫不放松防控有序恢复正常医疗秩序
+		</p>
+	</body>
+	<script type="text/javascript">
+		var p=document.getElementById('p');
+		var num = 18;
+		function jia(){
+			num=num+2;
+			p.style.fontSize=num+'px';
+			console.log(num);
+		}
+		function jian(){
+			num=num-2;
+			p.style.fontSize=num+'px';
+			if(num==2){
+				alert('不能再缩了，在所就没了');
+			}
+			console.log(num);
+		}
+	</script>
+</html>

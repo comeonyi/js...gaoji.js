@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		//for-in循环  对于数组  或对象
+		//先声明一个数组 赋值 给了变量arr
+		var arr=['小米','华为','vivo','红米'];
+		//下标               0      1     2      3 
+		console.log(arr);
+		console.log(arr.length);//arr.length指的是 arr这个数组的长度
+		console.log(arr[arr.length-1]);
+//         for  in 循环
+		for(var index in arr){  //只声明未赋值
+			document.write(arr[index]+'<br/>');
+		}
+//		for 循环
+		document.write('//////////////<br/>');
+		for(var a=0;a<arr.length;a++){
+			document.write(arr[a]+'<br/>');
+		}
+	</script>
+</html>

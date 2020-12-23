@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	*>=90分   一等奖
+		  >=80分   二等奖
+		  >=70分   三等奖
+		  >=60分  陪跑
+		  反之         罚款50元*/
+//		var  num=99;
+//prompt('提示语句')  弹出一个带文本的框    带确定和取消按钮
+//		alert('提示语句')   弹出一个框    只有一个  确定按钮
+//      条件      必须是boolean数据类型
+	
+	<script type="text/javascript">
+		var num = prompt('请输入考试成绩')
+		
+		if(num>100 || num<0){
+			alert('你输入的成绩格式不正确，请重新输入');
+		}else{
+			if (num>=90) {
+				alert('一等奖');
+			}else if(num>=80){
+				alert('二等奖');
+			}else if(num>=70){
+				alert('三等奖');
+			}else if(num>=60){
+				alert('陪跑者');
+			}else{
+				alert('罚款50元，充当班费。');
+			}
+		}
+		
+		//Math.random()     取随机数               [0~1)   包含0   包含1的 
+		//Math.ceil()     向上取舍
+		//Math.floor      向下取舍
+		//Math.round()    四舍五入
+//		var num = parseInt(Math.random()*100)
+//		if (num>=90) {
+//			alert('一等奖');
+//		}else if(num>=80){
+//			alert('二等奖');
+//		}else if(num>=70){
+//			alert('三等奖');
+//		}else if(num>=60){
+//			alert('陪跑者');
+//		}else{
+//			alert('罚款50元，充当班费。');
+//		}
+		
+	</script>
+</html>

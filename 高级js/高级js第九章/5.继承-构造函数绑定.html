@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>5.继承-构造函数绑定</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Person(){
+			this.foot=2;
+			this.head=1;
+			this.favorColor=['red','yellow'];
+		}
+		
+		function Student(name,no){
+			//将父对象的构造行数绷定在子对象上面
+			//'借调'父类的构造函数
+			Person.call(this);
+			//Person.apply(this);
+			this.name=name;
+			this.no=no;
+		}
+		var arr=new Student('张三','123');
+		arr.favorColor.push('blue');
+		console.log(arr.foot);
+		console.log(arr.head);
+		console.log(arr.favorColor);
+		
+		var arr2 = new Student('李四','456');
+		console.log(arr2.favorColor);
+	</script>
+</html>

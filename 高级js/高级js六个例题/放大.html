@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>放大</title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #div{
+            	margin: 100px auto;
+            	width: 720px;
+            	height: 270px;
+            	border: 3px solid blueviolet;
+            }
+            ul>li>img{
+            	width: 240px;
+            	height: 135px;
+            }
+            ul>li{
+            	width: 240px;
+            	height: 135px;
+            	float: left;
+            	list-style: none;
+            }
+        </style>
+    </head>
+	    <div id="div">
+	    	<ul>
+	    		<li><img src="img/1.jpg"/></li>
+	    		<li><img src="img/2.jpg"/></li>
+	    		<li><img src="img/3.jpg"/></li>
+	    		<li><img src="img/4.jpg"/></li>
+	    		<li><img src="img/5.jpg"/></li>
+	    		<li><img src="img/6.jpg"/></li>
+	    	</ul>
+	    </div>
+    <body>
+    </body>
+    <script type="text/javascript">
+       	var lis=document.getElementsByTagName('li');
+       	for (var i=0;i<lis.length;i++) {
+       		lis[i].num=i;
+       		lis[i].onclick=function (){
+       			console.log(lis[this.num].firstElementChild.getAttribute('src'));
+       			var da=lis[this.num].firstElementChild.getAttribute('src');
+       			add_img(da);
+       		}
+       	}
+       	function add_img (img_da) {
+            var father=document.getElementById('div');
+            //创建Div遮罩
+            var Div=document.createElement('div');
+            Div.style.background="black";
+            Div.style.weight="720px";
+            Div.style.height="270px";
+            Div.style.opacity=0.5;
+            father.appendChild(Div);
+            //创建图片
+            var Img=document.createElement('img');
+            Img.setAttribute('src',img_da);
+            father.appendChild(Img);
+            Img.style.position="relative";
+            Img.style.top="-270px"
+            Img.style.left="120px"
+            //创建span按钮
+            var Span=document.createElement('span');
+            Span.innerHTML="❌";
+            father.appendChild(Span);
+            Span.style.position="relative";
+            Span.style.bottom="528px"
+            Span.style.left="120px"
+            //给Span创建点击事件并添加删除功能
+            Span.onclick=function () {
+                console.log(father.childNodes);
+                father.removeChild(Div);
+                father.removeChild(Img);
+                father.removeChild(Span);
+            }
+        }
+    </script>
+</html>

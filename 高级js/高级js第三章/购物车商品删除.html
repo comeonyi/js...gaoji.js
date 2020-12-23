@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 20px;
+			}
+			table{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<p><img src="img/dd_logo.jpg"/><button onclick='guan()'>关闭</button></p>
+			<table >
+				<tr>
+					<td>商品图片</td>
+					<td>商品信息</td>
+					<td>单价</td>
+					<td>数量</td>
+					<td>总价</td>
+					<td>操作</td>
+				</tr>
+				<tr>
+					<td><img src="img/dog.jpg" width="50px" height="80px"/></td>
+					<td>我和狗狗一起活下来</td>
+					<td>￥<span>21.9</span></td>
+					<td><span>-</span><span>1</span><span>+</span></td>
+					<td>￥<span>21.9</span></td>
+					<td>
+						<p>移入收藏夹</p>
+						<p id="p1">删除</p>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="img/mai.jpg" width="50px" height="80px"/></td>
+					<td>灰霾来了</td>
+					<td>￥<span>34</span></td>
+					<td><span>-</span><span>1</span><span>+</span></td>
+					<td>￥<span>34</span></td>
+					<td>
+						<p>移入收藏夹</p>
+						<p id="p2">删除</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function guan(){
+			window.close('购物车商品删除.html');
+		}
+		var p1=document.getElementById('p1');
+		var p2=document.getElementById('p2');
+		p2.onclick=function(){
+			var fa=p2.parentNode.parentNode.parentNode;
+			console.log(fa);
+			fa.removeChild(p2.parentNode.parentNode);
+		}
+		p1.onclick=function(){
+			var fa=p1.parentNode.parentNode.parentNode;
+			fa.removeChild(p1.parentNode.parentNode);
+		}
+	</script>
+</html>

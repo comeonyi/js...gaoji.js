@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box>div{
+				float: left;
+			}
+			#small{
+				width: 250px;
+				height: 150px;
+				border: 1px solid red;
+				position: relative;
+			}
+			#small>img{
+				width: 250px;
+				height: 150px;
+			}
+			#mark{
+				width: 80px;
+				height: 80px;
+				background: rgba(255,220,0,0.5);
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 999;
+				cursor: move;
+			}
+			#big{
+				width: 400px;
+				height: 320px;
+				border: 1px solid black;
+				overflow: hidden;
+				display: none;
+				position: relative;
+			}
+			#bgImg{
+				width: 800px;
+				height: 650px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="small">
+				<img src="img/smallpic.jpg"/>
+				<span id="mark"></span>
+			</div>
+			<div id="big">
+				<img src="img/bigpic.jpg" id="bgImg"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var small=document.getElementById('small');
+		var mark=document.getElementById('mark');
+		var big=document.getElementById('big');
+		var bgImg=document.getElementById('bgImg');
+		
+		small.onmouseover=function(){
+			mark.style.display='block';
+			big.style.display='block';
+			small.onmousemove=function(e){
+				var oEvent=e || event;
+				//得到鼠标坐标
+				console.log('x坐标:'+oEvent.clientX+'y坐标:'+oEvent.clientY);
+				//得到遮罩层的位置
+				var left=oEvent.clientX-(mark.offsetWidth/2);
+				var top=oEvent.clientY-(mark.offsetHeight/2);
+				var maxWidth=small.offsetWidth-mark.offsetWidth;
+				var maxHeight=small.offsetHeight-mark.offsetHeight;
+				if(left<0){
+					left=0;
+				}
+				if(top<0){
+					top=0;
+				}
+				if(left>maxWidth){
+					left=maxWidth;
+				}
+				if(top>maxHeight){
+					top=maxHeight;
+				}
+				mark.style.left=left+'px';
+				mark.style.top=top+'px';
+				
+				bgImg.style.left=-(left*(bgImg.offsetWidth-big.offsetWidth))/maxWidth+'px';
+				bgImg.style.top=-(top*(bgImg.offsetHeight-big.offsetHeight))/maxHeight+'px';
+				
+			}
+		}
+		small.onmouseout=function(){
+			mark.style.display='none';
+			big.style.display='none';
+		}
+	</script>
+</html>

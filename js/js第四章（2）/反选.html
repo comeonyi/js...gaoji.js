@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="反选" />
+		<input type="button" value="全选" />
+		<input type="checkbox" name="" id="" value="" />篮球
+		<input type="checkbox" name="" id="" value="" checked/>乒乓球
+		<input type="checkbox" name="" id="" value="" />羽毛球
+		<input type="checkbox" name="" id="" value="" checked/>足球
+		<input type="checkbox" name="" id="" value="" />排球
+	</body>
+	<script type="text/javascript">
+		var input=document.getElementsByTagName('input');
+		console.log(input);
+		console.log(input.length);//得到有几个input框
+		console.log(input[1]);//获取篮球这个框
+		console.log(input[1].checked);//判断这个复选框是否被选中   true false
+		console.log(input[2]);//获取乒乓球这个框
+		console.log(input[2].checked);//判断这个复选框是否被选中   true false
+		input[0].onclick=function(){
+			for (var a=2;a<input.length;a++) {
+				if(input[a].checked){  //true
+					input[a].checked=false;
+				}else{
+					input[a].checked=true;
+				}
+			}
+		}
+		input[1].onclick=function(){
+			for (var a=2;a<input.length;a++) {
+				input[a].checked=true;
+			}
+		}
+	</script>
+	
+</html>

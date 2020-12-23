@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var date=new Date();
+		console.log(date);
+		var Hours=date.getHours();
+		console.log(Hours);
+		var Minutes=date.getMinutes();
+		console.log(Minutes);
+		var Seconds=date.getSeconds();
+		console.log(Seconds);
+		if (Hours<=9) {
+			Hours='0'+Hours;
+		}
+		if (Minutes<=9) {
+			Minutes='0'+Minutes;
+		}
+		if (Seconds<=9) {
+			Seconds='0'+Seconds;    ;
+		}
+		document.write("现在时间是："+Hours+'：'+Minutes+'：'+Seconds);
+	</script>
+</html>

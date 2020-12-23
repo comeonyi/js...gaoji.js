@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		String.prototype.trim=function(){
+			reg=/^\s+/;
+			return this.replace(reg,'');//去前面空格
+		}
+		String.prototype.trim1=function(){
+			reg=/\s+$/;
+			return this.replace(reg,'');//去后面空格
+		}
+		String.prototype.trim2=function(){
+			reg=/^\s+|\s+$/g;
+			return this.replace(reg,'');//去前后空格
+		}
+		String.prototype.trim3=function(){
+			reg=/\s+/g;
+			return this.replace(reg,'');//清除所有空格
+		}
+		var str=' kgc sss ';
+		console.log(str.trim());
+		console.log(str.trim1());
+		console.log(str.trim2());
+		console.log(str.trim3());
+	</script>
+</html>

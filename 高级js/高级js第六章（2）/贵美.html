@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #but1{
+                width: 70px;
+                height: 40px;
+                border-radius: 30px;
+                background:blue;
+               color: white;
+                color: black;
+            }
+            #but2{
+                width: 70px;
+                height: 40px;
+                border-radius: 30px;
+                background:blue;
+                color: black;
+                color: white;
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+         <form action="" method="post" id="myform">
+            <p>名字：<input type="text" name="" id="ming" value="" /></p>
+            <p>姓氏：<input type="text" name="" id="xing" value="" /></p>
+            <p>登录名：<input type="text" name="" id="deng" value="" /><span></span></p>
+            <p>密码：<input type="password" name="" id="mi1" value="" /><span></span></p>
+            <p>再次输入密码：<input type="password name="" id="pass" value="" /></p>
+            <p>电子邮箱：<input type="text" name="" id="email" value="" /><span></span></p>
+            <p>性别：<input type="radio" name="a" checked="checked"/>男<input type="radio" name="a"/>女</p>
+            <!--<p></p>-->
+            <p>爱好： 
+                <input type="checkbox" name="" id="" value="" />运动
+                <input type="checkbox" name="" id="" value="" />聊天
+                <input type="checkbox" name="" id="" value="" />游戏
+            </p>出生日期：
+            <select name="" id="nian">
+                <option value="">2001</option>
+                <option value="">2020</option>
+            </select>年
+            <select name="" id="yue">
+                <option value="">1</option>
+                <option value="">3</option>
+            </select>月
+            <select name="" id="ri">
+                <option value="">1</option>
+                <option value="">11</option>
+            </select>日
+            <!--<p><input type="submit" value="提交"/><input type="reset" id="" value="重填" /></p>-->
+            <br />
+            <button id="but1">提交</button><button id="but2">重填</button>
+        </form>
+    </body>
+    <script type="text/javascript">
+        var ming=document.getElementById('ming');
+        var xing=document.getElementById('xing');
+        var deng=document.getElementById('deng');
+        var sps=document.getElementsByTagName('span');
+        var mi1=document.getElementById('mi1');
+        var pass=document.getElementById('pass');
+        var email=document.getElementById('email');
+          
+        ming.onblur=function () {
+            var mingValue=ming.value;
+            if (mingValue=='') {
+                alert('名字不能为空');
+                return false;
+            }
+        }
+        xing.onblur=function () {
+            var xinghValue=xing.value;
+            if (xinghValue=='') {
+                alert('姓氏不能为空');
+                return false;
+            }
+        }
+        deng.onfocus=function () {
+            sps[0].innerHTML='（可包含a-z，0-9和下划线）';
+            sps[0].style.display='inline-block';
+        }
+        deng.onblur=function () {
+            var denghValue=deng.value;
+            if (denghValue=='') {
+                alert('登录名不能为空');
+                return false;
+            }
+        }
+        mi1.onfocus=function () {
+            sps[1].innerHTML='（至少包含6个字符）';
+            sps[1].style.display='inline-block';
+        }
+        mi1.onblur=function () {
+            var pasValue=pas.value;
+            if (pasValue.length<6) {
+                alert('密码至少六位');
+                return false;
+            }
+        }
+        pass.onblur=function () {
+            var pasValue=pas.value;
+            var passValue=pass.value;
+            if (pasValue != passValue) {
+                alert('两次密码不一样');
+                return false;
+            }
+        }
+       email.onfocus=function () {
+            sps[2].innerHTML='（必须包含@和.字符）';
+            sps[2].style.display='inline-block';
+        }
+        email.onblur=function () {
+            var emailValue=email.value;
+            if (emailValue.indexOf('@')==-1 && emailValue.indexOf('.')==-1) {
+                alert('没有@或.');
+                return false;
+            }
+        }
+    </script>
+   </body>
